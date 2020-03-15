@@ -1,38 +1,38 @@
 class Vector:
     
     def __init__(self, d):
-        self.__coords = [0] * d
+        self._coords = [0] * d
 
     def __len__(self) :
-        return len(self.__coords)
+        return len(self._coords)
     
     def __getitem__(self, indx):
-        if indx < 0 or indx > len(self.__coords):
+        if indx < 0 or indx > len(self._coords):
             raise IndexError("Invalid Index")
-        return self.__coords[indx]
+        return self._coords[indx]
     
     def __setitem__(self, indx, val):
-        if indx < 0 or indx > len(self.__coords):
+        if indx < 0 or indx > len(self._coords):
             raise IndexError("Invalid Index")
         else:
-            self.__coords[indx] = val
+            self._coords[indx] = val
     
     def __add__(self, other):
-        if len(self.__coords) != len(other):
+        if len(self._coords) != len(other):
             raise ValueError("Dimensions should be same for the two vectors")
         result = Vector(len(self))
         for i in range(len(self)):
-            result[i] = self.__coords[i] + other.__coords[i]
+            result[i] = self._coords[i] + other._coords[i]
         return result
     
     def __eq__(self, other):
-        return self.__coords == other.__coords
+        return self._coords == other._coords
     
     def __ne__(self, other):
         return not self == other
     
     def __str__(self):
-        return "< {} >".format(str(self.__coords)[1:-1])
+        return "< {} >".format(str(self._coords)[1:-1])
 
 if __name__ == "__main__":
     vec1 = Vector(3)
