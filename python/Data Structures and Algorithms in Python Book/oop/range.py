@@ -8,24 +8,24 @@ class Range:
             start, stop = 0, start # should be treated as range(0, n)
     
         # calculate the effective length once
-        self.__length = max(0, (stop - start + step - 1) //  step)
+        self._length = max(0, (stop - start + step - 1) //  step)
 
-        self.__start = start
-        self.__step = step
+        self._start = start
+        self._step = step
 
     def __len__(self):
-        return self.__length
+        return self._length
         
     def __getitem__(self, index):
         """For negative index"""
         if index < 0:
             index += len(self)
-        if not 0 <= index < self.__length:
+        if not 0 <= index < self._length:
             raise IndexError()
-        return self.__start + index * self.__step
+        return self._start + index * self._step
         
     def __str__(self):
-        return "Range<start = {}, step = {}, length = {}>".format(self.__start, self.__step, self.__length)
+        return "Range<start = {}, step = {}, length = {}>".format(self._start, self._step, self._length)
 
 if __name__ == "__main__":
     rng = Range(2, 20, 2)
