@@ -1,13 +1,13 @@
 class SequenceIterator:
     
     def __init__(self, sequence):
-        self.__sequence = sequence
-        self.__current_index = -1  #will increment to 0 on first call to next()
+        self._sequence = sequence
+        self._current_index = -1  #will increment to 0 on first call to next()
     
-    def next(self): # __next__ was not working 
-        self.__current_index += 1
-        if self.__current_index < len(self.__sequence):
-            return self.__sequence[self.__current_index]
+    def __next__(self): # use next() for Python 2.7 
+        self._current_index += 1
+        if self._current_index < len(self._sequence):
+            return self._sequence[self._current_index]
         else:
             raise StopIteration()
     
@@ -17,9 +17,9 @@ class SequenceIterator:
 
     def __str__(self):
         return 'Sequnce: {}, Current Index: {}, Length: {}'.format(
-            self.__sequence, 
-            self.__current_index, 
-            len(self.__sequence)) 
+            self._sequence, 
+            self._current_index, 
+            len(self._sequence)) 
     
 
 if __name__ == "__main__":
