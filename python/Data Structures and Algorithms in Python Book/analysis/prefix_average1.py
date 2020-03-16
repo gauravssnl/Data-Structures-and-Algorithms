@@ -10,3 +10,8 @@ def prefix_average1(S):
             total += S[i]    # 1 + 2 + 3 + ..... + n = n(n +1) / 2  => O(n^2) for addtion operation
         A[j] = total / (j+1) 
     return A
+
+
+if __name__ == "__main__":
+    seq = [1, 2, 3, 4, 5, 6]
+    print("The prefix average for the sequnce: ", prefix_average1(seq))

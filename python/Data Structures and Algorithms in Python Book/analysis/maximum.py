@@ -9,3 +9,8 @@ def find_max(data):
         if val > biggest: # O(1)
             biggest = val
     return biggest
+
+
+if __name__ == "__main__":
+    list1 = [1, 2, 3, 4, 5, 6, 20, 1, 21, 4, 6]
+    print("Maximum value in the list: ", find_max(list1))
