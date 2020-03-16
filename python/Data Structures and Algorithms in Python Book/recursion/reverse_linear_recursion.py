@@ -1,5 +1,6 @@
 # a total of 1+ math.floor(n/2) recusrive call
 # Complexity: O(n)
+# Tail recursion
 def reverse(S, start, stop):
     """Reverse elements in S[start:stop] recursively"""
     if start < stop - 1:    # at least 2 elements
