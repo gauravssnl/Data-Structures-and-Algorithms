@@ -54,6 +54,18 @@ class DynamicArray:
         self._A[k] =  val                           # store newest element
         self._n += 1
         # print("Insert: " , self._A, self._capacity, self._n)
+    
+    def remove(self, value):
+        """Removes the first occurrence of value (or raise ValueError)"""
+        # note: Shrinking of dynamic array is not considered
+        for k in range(self._n):
+            if self._A[k] == value:
+                for j in range(k, self._n -1):   #shift elements from index k to n-1 to their left ,i.e A[n-2] = A[n-1]
+                    self._A[j] = self._A[j+1]
+                self._A[self._n-1] = None              # helps garbage collection & there is no element at that index
+                self._n -= 1
+                return                           # exit immediately
+        raise ValueError('value not found')
   
 
 if __name__ == "__main__":
@@ -72,6 +84,6 @@ if __name__ == "__main__":
     dynamic_array.append(10)
     # print(dynamic_array)
     dynamic_array.insert(1, 100)
-    
+    dynamic_array.remove(8)
     for i in range(len(dynamic_array)):
         print("Value at index {} : {}".format(i, dynamic_array[i]))
