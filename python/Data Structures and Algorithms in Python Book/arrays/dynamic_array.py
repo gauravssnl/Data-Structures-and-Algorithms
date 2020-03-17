@@ -40,16 +40,38 @@ class DynamicArray:
         # print("Make array new capacity: ", capacity)
         return (capacity * ctypes.py_object)()
     
-    def __str__(self):
-        return '< Dynamic Array {} >'.format(list(self._A)) # convert PyArray object into list to print 
+    # def __str__(self):
+    #     return '< Dynamic Array {} >'.format(list(self._A)) # convert PyArray object into list to print 
     
+    def insert(self, k, val):
+        """Insert value at index k, and shift subsequent elements to the right"""
+        if not 0 <= k < self._n:
+            raise IndexError("Invalid Index")
+        if self._n == self._capacity:
+            self._resize(2 * self._capacity)
+        for j in range(self._n, k, -1):             # shift elements after k  to the next right index
+            self._A[j] = self._A[j-1]
+        self._A[k] =  val                           # store newest element
+        self._n += 1
+        # print("Insert: " , self._A, self._capacity, self._n)
+  
 
 if __name__ == "__main__":
     dynamic_array = DynamicArray()
     dynamic_array.append(1)
-    print(dynamic_array)
+    # print(dynamic_array)
     print(dynamic_array[0])
     dynamic_array.append(2)
     dynamic_array.append(3)
     dynamic_array.append(4)
-    print(dynamic_array)
+    dynamic_array.append(5)
+    dynamic_array.append(6)
+    dynamic_array.append(7)
+    dynamic_array.append(8)
+    dynamic_array.append(9)
+    dynamic_array.append(10)
+    # print(dynamic_array)
+    dynamic_array.insert(1, 100)
+    
+    for i in range(len(dynamic_array)):
+        print("Value at index {} : {}".format(i, dynamic_array[i]))
