@@ -1,5 +1,5 @@
 def insertion_sort(A):
-    for k in range(1, len(A)):          # k = 0, 1,, .. till n-1 th index , will use this index for item at index 0
+    for k in range(1, len(A)):          # k = 1,, .. till n-1 th index , will use this index for item at index 0
         curr = A[k]
         j = k
         while j > 0 and A[j-1] > curr:
