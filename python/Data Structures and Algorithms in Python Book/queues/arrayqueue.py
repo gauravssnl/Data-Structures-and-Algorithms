@@ -68,6 +68,7 @@ class ArrayQueue:
         # use queue size to display only existing elements  from the front of the queue
         # displaying storage size is optional, to debug shrinking of storage I have displayed
         return '<Queue: {}, storage size: {}>'.format(self._data[self._front: self._front + self._size ], len(self._data))       
+
 if __name__ == "__main__":
     array_queue = ArrayQueue()
     print(array_queue)
