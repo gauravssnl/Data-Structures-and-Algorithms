@@ -43,7 +43,10 @@ class LinkedDeque(_DoublyLinkedBase):
             raise Empty("Deque is empty")
         return self._delete_node(self._trailer._previous)
     
-   
+    def __str__(self):
+        """Return the LinkedDeque data as string."""
+        result =  super().__str__()
+        return "< Deque: {}>".format(result)
 
 if __name__ == "__main__":
     linked_deque = LinkedDeque()
