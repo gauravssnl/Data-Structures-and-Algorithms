@@ -82,7 +82,7 @@ class ArrayDeque:
         self._front = 0                                                  # set front value to the 0th index of new storage
 
     def __str__(self):
-        return '<DeQueue: {}, storage: {}>'.format(self._data[self._front: self._front+self._size], self._data)      
+        return '<DeQueue: {} >'.format(self._data)      
 
 if __name__ == "__main__":
     array_deque = ArrayDeque()
@@ -91,4 +91,11 @@ if __name__ == "__main__":
     print(array_deque) 
     array_deque.add_first(2)
     print(array_deque) 
-    print(array_deque.add_last(3))
+    array_deque.add_last(3)
+    print(array_deque)
+    print(array_deque.first())
+    print(array_deque.last())
+    array_deque.delete_first()
+    print(array_deque)
+    array_deque.delete_last()
+    print(array_deque)
