@@ -51,12 +51,12 @@ class _DoublyLinkedBase:
         return element
     
     def __str__(self):
-        """Return the Deque data as string."""
+        """Return the _DoublyLinkedBase data as string."""
         current_node = self._header                             # set current node as header sentinel 
         result = ""                                             # will return this result
         while current_node != self._trailer:                    # traverse till we reach trailer sentinel
             result += " <- {} -> ".format(current_node)
             current_node = current_node._next                   # set current node to the next one
         result += " <- {} -> ".format(current_node)             # add trailer sentinel data
-        return "< Deque: {}>".format(result)
+        return result
     
