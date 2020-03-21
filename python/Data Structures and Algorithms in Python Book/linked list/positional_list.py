@@ -117,7 +117,23 @@ class PositionalList(_DoublyLinkedBase):
         for index, element in enumerate(self):                       # __iter__(self) returns element
             result += "(Index {}: Element: {}),".format(index, element)
         return "PositionalList: [{}]".format(result[:-1])   # strip last trailing comma
-
+    
+    def insertion_sort(L):
+        """Sort PositionalList of comparable elements into non-decreasing order."""
+        if len(L) > 1:                                      # no need to sort otherwise
+            marker = L.first()
+            while marker != L.last():
+                pivot = L.after(marker)
+                value = pivot.element()
+                if value > marker.element():                # pivot is already sorted
+                    marker = pivot                          # pivot becones new marker
+                else:                                       # must relocate pivot
+                    walk = marker                           # find leftmost item greater than pivot value
+                    while walk != L.first() and L.before(walk).element() > value:
+                        walk = L.before(walk)
+                    L.delete(pivot)
+                    L.add_before(walk, value)
+    
 if __name__ == "__main__":
     positional_list = PositionalList()
     print(positional_list)
@@ -142,6 +158,9 @@ if __name__ == "__main__":
 
     replaced_element = positional_list.replace(positional_list.after(positional_list.first()), 300)
     print("Replaced element:", replaced_element)
+    print(positional_list)
+
+    positional_list.insertion_sort()
     print(positional_list)
 
 
