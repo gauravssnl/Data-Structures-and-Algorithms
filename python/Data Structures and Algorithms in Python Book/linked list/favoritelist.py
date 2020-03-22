@@ -1,6 +1,6 @@
 from positional_list import PositionalList
 
-#  Note: if no. of acess tally, most recent elemnt is at top
+#  Note: if no. of acess tally, most recent element is returned when top(k) is called
 class FavoriteList:
     """List of elements ordered from most frequently accessed to least."""
 
@@ -10,6 +10,9 @@ class FavoriteList:
         def __init__(self, e):
             self._value = e                                     # element
             self._count = 0                                     # access count of the element
+        
+        def __str__(self):
+            return "<Item : {}, count: {}>".format(self._value, self._count)
         
     # nonpublic utilites
     def _find_position(self, e):
