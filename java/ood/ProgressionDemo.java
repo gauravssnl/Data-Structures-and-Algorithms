@@ -37,5 +37,11 @@ public class ProgressionDemo {
 
         pr = new GeometricProgression(3, 2);
         pr.printProgression(10);
+
+        pr = new FibonacciProgression();
+        pr.printProgression(10);
+
+        pr = new FibonacciProgression(2, 5);
+        pr.printProgression(10);
     }
 }
