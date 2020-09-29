@@ -4,12 +4,12 @@ public class ArithmeticProgression extends Progression {
     // store step size
     protected long increment;
 
-    /** Construct progression 0, 1, 2, ... */
+    /** Construct arithmetic progression 0, 1, 2, ... */
     public ArithmeticProgression() {
         this(0, 1);                                                     // start at 0 with increment of 1
     } 
 
-    /** Construct progression 0, stepsize, 2 * stepsize, ... */
+    /** Construct arithmetic progression 0, stepsize, 2 * stepsize, ... */
     public ArithmeticProgression(long stepsize) {
         this(0, stepsize);                                              // start at 0
     } 
