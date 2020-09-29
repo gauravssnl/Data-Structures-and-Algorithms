@@ -14,7 +14,7 @@ public class ArithmeticProgression extends Progression {
         this(0, stepsize);                                              // start at 0
     } 
 
-    /** Construct progression with aribtrary start and increment */
+    /** Construct arithmetic progression with aribtrary start and increment */
     public ArithmeticProgression(long start, long stepsize) {
         super(start);
         increment = stepsize;
