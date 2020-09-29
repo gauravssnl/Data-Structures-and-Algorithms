@@ -28,5 +28,14 @@ public class ProgressionDemo {
 
         pr = new ArithmeticProgression(0, 2);
         pr.printProgression(10);
+
+        pr = new GeometricProgression();
+        pr.printProgression(10);
+
+        pr = new GeometricProgression(4);
+        pr.printProgression(10);
+
+        pr = new GeometricProgression(3, 2);
+        pr.printProgression(10);
     }
 }
