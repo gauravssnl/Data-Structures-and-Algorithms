@@ -34,7 +34,7 @@ public class Progression {
     public void printProgression(int n) {
         System.out.print(nextValue()); // print first value without space
         for (int j = 1; j < n; j++) {
-            System.out.println(" " + nextValue());
+            System.out.print(" " + nextValue());
         }
         System.out.println(); // end the line
     }
