@@ -14,5 +14,13 @@ public class PairDemo {
         System.out.println(pair2.getSecond());
         System.out.println(pair2.getSecond().getClass());
         System.out.println(pair2.getFirst().getClass() == pair2.getSecond().getClass());
+
+        Pair<Integer, Double> pair3 = new Pair<>(5, 6.3);       // rely on type inference
+        System.out.println(pair3.getFirst());
+        System.out.println(pair3.getFirst().getClass());
+        System.out.println(pair3.getSecond());
+        System.out.println(pair3.getSecond().getClass());
+        System.out.println(pair2.getFirst().getClass() == pair2.getSecond().getClass());
+        System.out.println(pair3.getFirst().getClass().equals(pair2.getSecond().getClass()));
     }
 }
