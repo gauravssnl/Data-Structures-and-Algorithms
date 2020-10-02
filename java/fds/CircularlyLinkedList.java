@@ -115,4 +115,29 @@ public class CircularlyLinkedList<E> {
         return result;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        CircularlyLinkedList other = (CircularlyLinkedList) obj;
+        if (size != other.size)
+            return false;
+        Node walkA = tail;
+        Node walkB = other.tail;
+        while (walkA != null) {
+            if (!walkA.getElement().equals(walkB.getElement()))
+                return false;
+            walkA = walkA.getNext();
+            walkB = walkB.getNext();
+            // Handle special case for circularly linked list
+            // otherwise this will keep on running recursively
+            if (walkA.equals(tail) && walkB.equals(other.tail)) // we have again reached at the tail of the current
+                                                                // list, need to break the loop
+                return true;
+        }
+        return true;
+    }
+
 }

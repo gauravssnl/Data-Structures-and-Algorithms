@@ -22,5 +22,17 @@ public class CircularlyLinkedListDemo {
         System.out.println(cl.last());
         System.out.println(cl.first());
         System.out.println(cl);
+
+        CircularlyLinkedList<String> ol = new CircularlyLinkedList<>();
+        ol.addFirst("Rust");
+        ol.addFirst("Go");
+        System.out.println(ol);
+        System.out.println(cl.equals(cl));
+        System.out.println(cl.equals(ol));
+        cl.rotate();
+        System.out.println(cl.equals(ol));
+        cl = new CircularlyLinkedList<>();
+        ol = new CircularlyLinkedList<>();
+        System.out.println(cl.equals(ol));
     }
 }
