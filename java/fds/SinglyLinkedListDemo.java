@@ -37,5 +37,8 @@ public class SinglyLinkedListDemo {
         sl.addFirst("Test1");
         ol.addFirst("Test2");
         System.out.println(sl.equals(ol));
+        sl = new SinglyLinkedList<>();
+        ol = new SinglyLinkedList<>();
+        System.out.println(sl.equals(ol));
     }
 }
