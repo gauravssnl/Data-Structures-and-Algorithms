@@ -101,11 +101,13 @@ public class SinglyLinkedList<E> {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        SinglyLinkedList<E> other = (SinglyLinkedList<E>) obj; // explicit cast
+        
+        //  SinglyLinkedList<E> is not user here as other list might be of different elements type
+        SinglyLinkedList other = (SinglyLinkedList) obj; // explicit cast
         if (size != other.size)
             return false;
-        Node<E> walkA = head; // traverse the current list
-        Node<E> walkB = other.head; // traverse the other list
+        Node walkA = head; // traverse the current list
+        Node walkB = other.head; // traverse the other list
         while (walkA != null) { // we need to traverse until the tail is reached
             if (!walkA.getElement().equals(walkB.getElement()))
                 return false;
