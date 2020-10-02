@@ -28,5 +28,14 @@ public class SinglyLinkedListDemo {
         System.out.println(sl);
         sl.addLast("Python");
         System.out.println(sl);
+
+        SinglyLinkedList<String> ol = new SinglyLinkedList<>();
+        ol.addLast("Ravi");
+        ol.addLast("Python");
+        System.out.println(ol);
+        System.out.println(sl.equals(ol));
+        sl.addFirst("Test1");
+        ol.addFirst("Test2");
+        System.out.println(sl.equals(ol));
     }
 }
