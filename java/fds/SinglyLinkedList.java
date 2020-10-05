@@ -1,7 +1,7 @@
 package fds;
 
 /** A generic Singly linked list. */
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E> implements Cloneable {
     // nested Node class
     private static class Node<E> {
         private E element; // reference to the element stored at this node
@@ -101,8 +101,9 @@ public class SinglyLinkedList<E> {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        
-        //  SinglyLinkedList<E> is not user here as other list might be of different elements type
+
+        // SinglyLinkedList<E> is not user here as other list might be of different
+        // elements type
         SinglyLinkedList other = (SinglyLinkedList) obj; // explicit cast
         if (size != other.size)
             return false;
@@ -116,6 +117,25 @@ public class SinglyLinkedList<E> {
         }
 
         return true;
+    }
+
+    /** Deep cloning/copying a Singly-linked list. */
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // always use inherited Object.clone() to create the initail copy
+        SinglyLinkedList<E> other = (SinglyLinkedList<E>) super.clone();
+        if (size > 0) { // we need to make independent chain of nodes
+            other.head = new Node<>(head.getElement(), null);
+            Node<E> walk = head.getNext(); // walk through the remainder of the original list
+            Node<E> otherTail = other.head; // rember most newly created node
+            while (walk != null) { // make a new node storing same element as in original list
+                Node<E> newest = new Node<>(walk.getElement(), null);
+                otherTail.setNext(newest); // link previous node to this one
+                otherTail = newest;
+                walk = walk.getNext();
+            }
+        }
+        return other;
     }
 
 }
