@@ -11,7 +11,7 @@ public class PrefixAverages {
             // executed j + 1 times
             // i.e inner loop is executed 1 + 2 + 3 + ... + n- times => Time complexity :
             // O(n ^ 2)
-            for (int k = 0; k <= 0; k++)
+            for (int k = 0; k <= j; k++)
                 sum += data[k];
             a[j] = sum / (j + 1);
         }
