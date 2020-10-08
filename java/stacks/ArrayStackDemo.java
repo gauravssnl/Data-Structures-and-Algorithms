@@ -27,5 +27,11 @@ public class ArrayStackDemo {
         sArrayStack.push("Go");
         sArrayStack.push("Python");
         System.out.println(sArrayStack);
+
+        Stack<String> stack1 = new ArrayStack<>();
+        stack1.push("Cool");
+        stack1.push("Rust");
+        System.out.println(stack1.toString());
+
     }
 }
