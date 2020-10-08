@@ -17,26 +17,31 @@ public class ArrayStack<E> implements Stack<E> {
         data = (E[]) new Object[capacity]; // safe cast; compiler may give warning
     }
 
+     @Override
     public int size() {
         return t + 1; // intial value of t is -1 and size is 0
     }
 
+    @Override
     public boolean isEmpty() {
         return t == -1;
     }
 
+    @Override
     public void push(E e) throws IllegalArgumentException {
         if (size() == data.length)
             throw new IllegalArgumentException("Stack is full");
         data[++t] = e; // increment t before saving new item
     }
 
+    @Override
     public E top() {
         if (isEmpty())
             return null;
         return data[t]; // top element is at index t
     }
 
+    @Override
     public E pop() {
         if (isEmpty())
             return null;
