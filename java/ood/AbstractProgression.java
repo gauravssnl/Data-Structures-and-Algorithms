@@ -20,7 +20,7 @@ public abstract class AbstractProgression {
     public void printProgression(int n) {
         System.out.print(nextValue());
         for (int j = 1; j < n; j++)
-            System.out.print(nextValue());
+            System.out.print(" " + nextValue());    // print leading space before others
         System.out.println();
     }
 
