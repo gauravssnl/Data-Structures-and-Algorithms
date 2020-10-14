@@ -1,6 +1,6 @@
 package lists;
 
-public class SortPosistionalList {
+public class SortPositionalList {
     public static void insertionSort(PositionalList<Integer> list) {
         Position<Integer> marker = list.first(); // last position known to be sorted
         while (marker != list.last()) {
