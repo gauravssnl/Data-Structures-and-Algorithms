@@ -24,7 +24,7 @@ if __name__ == "__main__":
     b = B()
     print("class B Info:")
     print(dir(B))
-    print("instance 'a' Info:")
+    print("instance 'b' Info:")
     print(dir(b))
     print(b.__slots__)
     # print(b.__dict__) # this will throw error if you uncomment this line
