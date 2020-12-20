@@ -1,4 +1,4 @@
-from stack import ListStack
+from .stack import ListStack
 
 
 class BadStack(ListStack):
