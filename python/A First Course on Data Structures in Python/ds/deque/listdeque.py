@@ -1,4 +1,4 @@
-class SimpleListDeque:
+class ListDeque:
     def __init__(self):
         self._L = []
 
