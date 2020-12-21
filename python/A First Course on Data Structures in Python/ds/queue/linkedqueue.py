@@ -5,7 +5,7 @@ class LinkedQueue:
     def __init__(self):
         self._L = LinkedList()
 
-    def enque(self, item):
+    def enqueue(self, item):
         self._L.add_last(item)
 
     def dequeue(self):
