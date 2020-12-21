@@ -14,5 +14,5 @@ class ListQueueSimple:
     def __len__(self):
         return len(self._L)
 
-    def isempty(self):
+    def is_empty(self):
         return len(self) == 0

@@ -17,5 +17,5 @@ class ListQueueFakeDelete:
     def __len__(self):
         return len(self._L) - self._head
 
-    def isempty(self):
+    def is_empty(self):
         return len(self) == 0
