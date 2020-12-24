@@ -1,3 +1,4 @@
+# A recursive example to find minimum number of coins required for change.
 def rec_mc(coinvalue_list, change):
     min_num_coins = change  # initailly set minimum no. of coins to change
     if change in coinvalue_list:
