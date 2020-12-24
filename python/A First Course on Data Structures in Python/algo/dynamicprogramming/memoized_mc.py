@@ -7,8 +7,10 @@ def memoized_mc(coinvalue_list, change, knowm_results={}):
         return knowm_results[change]
     else:
         for i in [c for c in coinvalue_list if c <= change]:
-            num_of_coins = 1 + \
-                memoized_mc(coinvalue_list, change - i, knowm_results)
+            num_of_coins = (1 + memoized_mc(coinvalue_list,
+                                            change - i, knowm_results))
+            # this also works
+            # num_of_coins = 1 + memoized_mc(coinvalue_list, change - i)
             if num_of_coins < min_num_coins:
                 min_num_coins = num_of_coins
                 knowm_results[change] = min_num_coins
